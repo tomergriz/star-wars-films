@@ -1,4 +1,3 @@
-import React from "react";
 import "./App.css";
 import "./components/FilmTable.css";
 import "./components/FilmDetails.css";
@@ -15,7 +14,6 @@ function App() {
                     <iframe
                         title="background-video"
                         src="https://www.youtube.com/embed/EadT6NRVbF4?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&mute=1&playlist=EadT6NRVbF4"
-                        frameBorder="0"
                         allowFullScreen
                         allow="autoplay; muted"
                     ></iframe>

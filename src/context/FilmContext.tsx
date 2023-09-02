@@ -12,6 +12,7 @@ type FilmContextProps = {
     setSelectedFilm: (film: Film | null) => void;
     favoriteFilms: string[];
     toggleFavorite: (filmId: string) => void;
+    loading: boolean;
 };
 
 export const FilmContext = createContext<FilmContextProps | undefined>(undefined);
@@ -20,12 +21,20 @@ export const FilmProvider: React.FC<{ children: React.ReactNode }> = ({ children
     const [films, setFilms] = useState<Film[]>([]);
     const [selectedFilm, setSelectedFilm] = useState<Film | null>(null);
     const [favoriteFilms, setFavoriteFilms] = useState<string[]>([]);
+    const [loading, setLoading] = useState<boolean>(true);
 
     useEffect(() => {
+        setLoading(true);
         axios
             .get("https://swapi.dev/api/films/")
-            .then((res: any) => setFilms(res.data.results))
-            .catch((err: any) => console.error("Error fetching films:", err));
+            .then((res: any) => {
+                setFilms(res.data.results);
+                setLoading(false);
+            })
+            .catch((err: any) => {
+                console.error("Error fetching films:", err);
+                setLoading(false);
+            });
     }, []);
 
     useEffect(() => {
@@ -50,7 +59,7 @@ export const FilmProvider: React.FC<{ children: React.ReactNode }> = ({ children
     };
 
     return (
-        <FilmContext.Provider value={{ films, selectedFilm, setSelectedFilm, favoriteFilms, toggleFavorite }}>
+        <FilmContext.Provider value={{ films, selectedFilm, setSelectedFilm, favoriteFilms, toggleFavorite, loading }}>
             {children}
         </FilmContext.Provider>
     );
