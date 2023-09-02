@@ -3,7 +3,7 @@ import "./FilmTable.css";
 import { useFilmContext } from "../context/FilmContext";
 
 const FilmTable: React.FC = () => {
-    const { films, setSelectedFilm, selectedFilm } = useFilmContext();
+    const { films, setSelectedFilm, favoriteFilms } = useFilmContext();
 
     return (
         <div className="film-table">
@@ -12,7 +12,7 @@ const FilmTable: React.FC = () => {
                 {films.map((film, index) => (
                     <li
                         key={index}
-                        className={selectedFilm?.title === film.title ? "active" : ""}
+                        className={`${favoriteFilms.includes(film.title) ? "favorite" : ""}                       `}
                         onClick={() => setSelectedFilm(film)}
                     >
                         {film.title}

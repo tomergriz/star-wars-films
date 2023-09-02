@@ -24,8 +24,8 @@ export const FilmProvider: React.FC<{ children: React.ReactNode }> = ({ children
     useEffect(() => {
         axios
             .get("https://swapi.dev/api/films/")
-            .then((res) => setFilms(res.data.results))
-            .catch((err) => console.error("Error fetching films:", err));
+            .then((res: any) => setFilms(res.data.results))
+            .catch((err: any) => console.error("Error fetching films:", err));
     }, []);
 
     useEffect(() => {

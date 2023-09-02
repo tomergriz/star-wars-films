@@ -1,14 +1,15 @@
 import React from "react";
 import { useFilmContext } from "../context/FilmContext";
 import FavoriteButton from "./FavoriteButton";
-import './FilmDetails.css';
-
+import "./FilmDetails.css";
 
 const FilmDetails: React.FC = () => {
-    const { selectedFilm: film } = useFilmContext();
+    const { selectedFilm: film, favoriteFilms } = useFilmContext();
+
+    const isFavorite = favoriteFilms.includes(film?.title || "");
 
     return (
-        <div className="film-details">
+        <div className={`film-details ${isFavorite ? "favorite" : ""}`}>
             <h2>Film Details</h2>
             {film ? (
                 <>

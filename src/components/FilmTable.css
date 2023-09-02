@@ -13,11 +13,11 @@ li {
     transition: background-color 0.3s ease;
 }
 
-li.active {
-    background-color: #777;
-    color: #fff;
-}
-
 li:hover {
     background-color: #555;
+}
+
+.film-table.favorite {
+    border: 2px solid yellow;
+    box-shadow: 0 4px 8px rgba(255, 255, 0, 0.6);
 }

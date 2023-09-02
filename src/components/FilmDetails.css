@@ -12,3 +12,8 @@ p {
     color: #ccc;
     font-family: "Courier New", Courier, monospace;
 }
+
+.film-details.favorite {
+    border: 2px solid yellow;
+    box-shadow: 0 4px 8px rgba(255, 255, 0, 0.6);
+}

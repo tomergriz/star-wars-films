@@ -1,43 +1,73 @@
 body {
-  margin: 0;
-  padding: 0;
-  background-color: #121212;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    overflow-y: auto;
+}
+
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.video-background iframe {
+    position: absolute;
+    left: -20%;
+    height: 110%;
+    pointer-events: none;
+    width: 140%; 
+    transform: scale(2); 
 }
 
 .App {
-  font-family: 'Arial', sans-serif;
-  background-color: #121212;
-  color: #ffffff;
-  padding: 2em;
-  text-align: center;
+    font-family: "Arial", sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    padding: 2em;
+    text-align: center;
+    position: relative;
+    z-index: 1;
 }
 
 .app-content {
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
-  align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    align-items: stretch;
 }
 
 @media (min-width: 768px) {
-  .app-content {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-  }
+    .app-content {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: stretch;
+    }
+    body {
+      overflow-y: hidden;
+    }
 }
 
 h1 {
-  font-size: 2em;
-  margin-bottom: 1em;
+    font-size: 2em;
+    margin-bottom: 1em;
 }
 
-.film-table, .film-details {
-  flex: 1;
-  padding: 1em;
-  border-radius: 8px;
-  background-color: #1b1b1b;
-  margin: 0.5em;
-  box-shadow: inset 0 0 10px #000000;
+.film-table,
+.film-details {
+    flex: 1;
+    padding: 1em;
+    border-radius: 8px;
+    background-color: rgba(27, 27, 27, 0.8);
+    margin: 0.5em;
+    box-shadow: inset 0 0 10px #000000;
+    height: 430px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
 }
-
