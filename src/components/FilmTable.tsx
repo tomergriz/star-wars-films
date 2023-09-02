@@ -1,16 +1,9 @@
 import React from "react";
+import { useFilmContext } from '../context/FilmContext';
 
-type Film = {
-    title: string;
-    opening_crawl: string
-};
+const FilmTable: React.FC = () => {
+    const { films, setSelectedFilm } = useFilmContext();
 
-type Props = {
-    films: Film[];
-    setSelectedFilm: React.Dispatch<React.SetStateAction<Film | null>>;
-};
-
-const FilmTable: React.FC<Props> = ({ films, setSelectedFilm }) => {
     return (
         <div>
             <h2>Film Table</h2>
