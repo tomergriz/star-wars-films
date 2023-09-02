@@ -1,5 +1,8 @@
 import React from "react";
 import "./App.css";
+import './components/FilmTable.css';
+import './components/FilmDetails.css';
+import './components/FavoriteButton.css';
 import { FilmProvider } from "./context/FilmContext";
 import FilmTable from "./components/FilmTable";
 import FilmDetails from "./components/FilmDetails";

@@ -1,5 +1,7 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useFilmContext } from '../context/FilmContext';
+import './FavoriteButton.css';
+
 
 type FavoriteButtonProps = {
   filmId: string;
@@ -10,7 +12,8 @@ const FavoriteButton: React.FC<FavoriteButtonProps> = ({ filmId }) => {
   const isFavorite = favoriteFilms.includes(filmId);
 
   return (
-    <button onClick={() => toggleFavorite(filmId)}>
+    <button className={`favorite-button ${isFavorite ? 'active' : ''} `}
+    onClick={() => toggleFavorite(filmId)}>
       {isFavorite ? 'Unfavorite' : 'Favorite'}
     </button>
   );

@@ -1,12 +1,14 @@
 import React from "react";
 import { useFilmContext } from "../context/FilmContext";
 import FavoriteButton from "./FavoriteButton";
+import './FilmDetails.css';
+
 
 const FilmDetails: React.FC = () => {
     const { selectedFilm: film } = useFilmContext();
 
     return (
-        <div>
+        <div className="film-details">
             <h2>Film Details</h2>
             {film ? (
                 <>
