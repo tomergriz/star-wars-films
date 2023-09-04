@@ -1,5 +1,5 @@
 import React from 'react';
-import { useFilmContext } from '../context/FilmContext';
+import { useFilmContext } from '../../context/FilmContext';
 import './FavoriteButton.css';
 
 

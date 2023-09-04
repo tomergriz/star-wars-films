@@ -1,6 +1,12 @@
-# Getting Started with Create React App
+# Getting Started with Star Wars Film Explorer
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+This application allows you to browse a list of Star Wars films by title. Additionally, you can mark your favorite films by clicking the "Add to Favorite" button.
+
+## Installation
+
+Run `npm install` to install all required packages.
 
 ## Available Scripts
 

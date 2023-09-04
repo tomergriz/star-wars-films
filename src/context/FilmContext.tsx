@@ -35,27 +35,23 @@ export const FilmProvider: React.FC<{ children: React.ReactNode }> = ({ children
                 console.error("Error fetching films:", err);
                 setLoading(false);
             });
-    }, []);
 
-    useEffect(() => {
         const storedFavorites = localStorage.getItem("favoriteFilms");
         if (storedFavorites) {
             setFavoriteFilms(JSON.parse(storedFavorites));
         }
     }, []);
 
-    const toggleFavorite = (filmId: string) => {
-        const favoriteSet = new Set(favoriteFilms);
+    const toggleFavorite = (filmTitle: string) => {
+        const isFilmAlreadyFavorite = favoriteFilms.includes(filmTitle);
 
-        if (favoriteSet.has(filmId)) {
-            favoriteSet.delete(filmId);
-        } else {
-            favoriteSet.add(filmId);
-        }
+        const updatedFavoriteFilms = isFilmAlreadyFavorite
+            ? favoriteFilms.filter((existingTitle) => existingTitle !== filmTitle)
+            : [...favoriteFilms, filmTitle];
 
-        const newFavorites = Array.from(favoriteSet);
-        localStorage.setItem("favoriteFilms", JSON.stringify(newFavorites));
-        setFavoriteFilms(newFavorites);
+        localStorage.setItem("favoriteFilms", JSON.stringify(updatedFavoriteFilms));
+
+        setFavoriteFilms(updatedFavoriteFilms);
     };
 
     return (
