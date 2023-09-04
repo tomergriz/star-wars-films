@@ -20,7 +20,7 @@ li:hover {
 
 li.favorite {
     border: 2px solid #FFD700;
-    box-shadow: 0 4px 8px rgba(255, 255, 0, 0.6);
+    box-shadow: 0 0 8px rgba(255, 255, 0, 0.6);
 }
 
 

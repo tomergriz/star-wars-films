@@ -39,7 +39,7 @@ const FilmTable: React.FC = () => {
 
     return (
         <div className="film-table">
-            <h2>Film Table</h2>
+            <h2>Films</h2>
             <ul>{loading ? renderLoadingState() : renderFilmList(films, setSelectedFilm, favoriteFilms)}</ul>
         </div>
     );
