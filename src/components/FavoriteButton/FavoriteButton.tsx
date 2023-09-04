@@ -14,7 +14,7 @@ const FavoriteButton: React.FC<FavoriteButtonProps> = ({ filmId }) => {
   return (
     <button className={`favorite-button ${isFavorite ? 'active' : ''} `}
     onClick={() => toggleFavorite(filmId)}>
-      {isFavorite ? 'Remove Favorite' : 'Add Favorite'}
+      {isFavorite ? 'Remove from Favorites' : 'Add to Favorites'}
     </button>
   );
 };
